@@ -11,43 +11,43 @@ setOptions({
 });
 
 const now = new Date();
-// const defaultEvents = [{
-//     id: 1,
-//     start: '2021-12-08T13:00',
-//     end: '2021-12-08T13:45',
-//     title: 'Lunch @ Butcher\'s',
-//     description: '',
-//     allDay: false,
-//     free: true,
-//     color: '#009788'
-// }, {
-//     id: 2,
-//     start: '2021-12-12T15:00',
-//     end: '2021-12-12T16:00',
-//     title: 'General orientation',
-//     description: '',
-//     allDay: false,
-//     free: false,
-//     color: '#ff9900'
-// }, {
-//     id: 3,
-//     start: '2021-12-11T18:00',
-//     end: '2021-12-11T22:00',
-//     title: 'Dexter BD',
-//     description: '',
-//     allDay: false,
-//     free: true,
-//     color: '#3f51b5'
-// }, {
-//     id: 4,
-//     start: '2021-12-13T10:30',
-//     end: '2021-12-13T11:30',
-//     title: 'Stakeholder mtg.',
-//     description: '',
-//     allDay: false,
-//     free: false,
-//     color: '#f44437'
-// }];
+const defaultEvents = [{
+    id: 1,
+    start: '2021-12-08T13:00',
+    end: '2021-12-08T13:45',
+    title: 'Lunch @ Butcher\'s',
+    description: '',
+    allDay: false,
+    free: true,
+    color: '#009788'
+}, {
+    id: 2,
+    start: '2021-12-12T15:00',
+    end: '2021-12-12T16:00',
+    title: 'General orientation',
+    description: '',
+    allDay: false,
+    free: false,
+    color: '#ff9900'
+}, {
+    id: 3,
+    start: '2021-12-11T18:00',
+    end: '2021-12-11T22:00',
+    title: 'Dexter BD',
+    description: '',
+    allDay: false,
+    free: true,
+    color: '#3f51b5'
+}, {
+    id: 4,
+    start: '2021-12-13T10:30',
+    end: '2021-12-13T11:30',
+    title: 'Stakeholder mtg.',
+    description: '',
+    allDay: false,
+    free: false,
+    color: '#f44437'
+}];
 
 const viewSettings = {
     calendar: { labels: true }
