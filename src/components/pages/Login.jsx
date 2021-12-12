@@ -27,7 +27,7 @@ class Login extends Component {
 
   async signinSubmit(e){ 
     e.preventDefault()
-    var url = " http://127.0.0.1:8000/api/users/login";
+    var url = "http://127.0.0.1:8000/api/users/login";
     var data ={email:this.state.email,password:this.state.password};
     var urlData = url+"?"+data;
     let result = await fetch(url, {

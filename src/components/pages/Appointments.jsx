@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Footer from '../elements/Footer';
 import Navbar from '../elements/Navbar';
 import '../css/appointments.css';
@@ -11,43 +11,45 @@ setOptions({
 });
 
 const now = new Date();
-// const defaultEvents = [{
-//     id: 1,
-//     start: '2021-12-08T13:00',
-//     end: '2021-12-08T13:45',
-//     title: 'Lunch @ Butcher\'s',
-//     description: '',
-//     allDay: false,
-//     free: true,
-//     color: '#009788'
-// }, {
-//     id: 2,
-//     start: '2021-12-12T15:00',
-//     end: '2021-12-12T16:00',
-//     title: 'General orientation',
-//     description: '',
-//     allDay: false,
-//     free: false,
-//     color: '#ff9900'
-// }, {
-//     id: 3,
-//     start: '2021-12-11T18:00',
-//     end: '2021-12-11T22:00',
-//     title: 'Dexter BD',
-//     description: '',
-//     allDay: false,
-//     free: true,
-//     color: '#3f51b5'
-// }, {
-//     id: 4,
-//     start: '2021-12-13T10:30',
-//     end: '2021-12-13T11:30',
-//     title: 'Stakeholder mtg.',
-//     description: '',
-//     allDay: false,
-//     free: false,
-//     color: '#f44437'
-// }];
+
+
+const defaultEvents = [{
+    id: 1,
+    start: '2021-12-08T13:00',
+    end: '2021-12-08T13:45',
+    title: 'Lunch @ Butcher\'s',
+    description: '',
+    allDay: false,
+    free: true,
+    color: '#009788'
+}, {
+    id: 2,
+    start: '2021-12-12T15:00',
+    end: '2021-12-12T16:00',
+    title: 'General orientation',
+    description: '',
+    allDay: false,
+    free: false,
+    color: '#ff9900'
+}, {
+    id: 3,
+    start: '2021-12-11T18:00',
+    end: '2021-12-11T22:00',
+    title: 'Dexter BD',
+    description: '',
+    allDay: false,
+    free: true,
+    color: '#3f51b5'
+}, {
+    id: 4,
+    start: '2021-12-13T10:30',
+    end: '2021-12-13T11:30',
+    title: 'Stakeholder mtg.',
+    description: '',
+    allDay: false,
+    free: false,
+    color: '#f44437'
+}];
 
 const viewSettings = {
     calendar: { labels: true }
@@ -70,6 +72,17 @@ const colorPopup = {
 const colors = ['#ffeb3c', '#ff9900', '#f44437', '#ea1e63', '#9c26b0', '#3f51b5', '', '#009788', '#4baf4f', '#7e5d4e'];
 
 function Appointments() {
+    useEffect(() => {
+        fetch('http://127.0.0.1:8000/api/appointments/', {
+            method: 'GET',
+            headers: { "Content-Type": 'application/json',
+                        "Accept": 'application/json',
+            }
+        }).then((val) => {
+            const data = JSON.parse(val);
+            setMyEvents(data);
+        })
+    }, [])
     const [myEvents, setMyEvents] = React.useState(null);
     const [tempEvent, setTempEvent] = React.useState(null);
     const [isOpen, setOpen] = React.useState(false);
@@ -302,91 +315,95 @@ function Appointments() {
         <p>The power to do more</p>
         </div>
         <div className='calendarPage'>
-            <Eventcalendar
-                view={viewSettings}
-                data={myEvents}
-                clickToCreate="double"
-                dragToCreate={true}
-                dragToMove={true}
-                dragToResize={true}
-                selectedDate={mySelectedDate}
-                onSelectedDateChange={onSelectedDateChange}
-                onEventClick={onEventClick}
-                onEventCreated={onEventCreated}
-                onEventDeleted={onEventDeleted}
-                onEventUpdated={onEventUpdated}
-            />
-            <Popup
-                display="bottom"
-                fullScreen={true}
-                contentPadding={false}
-                headerText={headerText}
-                anchor={anchor}
-                buttons={popupButtons}
-                isOpen={isOpen}
-                onClose={onClose}
-                responsive={responsivePopup}
-            >
-                <div className="mbsc-form-group">
-                    <Input label="Title" value={popupEventTitle} onChange={titleChange} />
-                    <Textarea label="Description" value={popupEventDescription} onChange={descriptionChange} />
-                </div>
-                <div className="mbsc-form-group">
-                    <Switch label="All-day" checked={popupEventAllDay} onChange={allDayChange} />
-                    <Input ref={startRef} label="Starts" />
-                    <Input ref={endRef} label="Ends" />
-                    <Datepicker
-                        select="range"
-                        controls={controls}
-                        touchUi={true}
-                        startInput={start}
-                        endInput={end}
-                        showRangeLabels={false}
-                        responsive={respSetting}
-                        onChange={dateChange}
-                        value={popupEventDate}
-                    />
-                    <div onClick={openColorPicker} className="event-color-c">
-                        <div className="event-color-label">Color</div>
-                        <div className="event-color" style={{ background: selectedColor }}></div>
+            {myEvents !== null && (
+            <>
+                <Eventcalendar
+                    view={viewSettings}
+                    data={myEvents}
+                    clickToCreate="double"
+                    dragToCreate={true}
+                    dragToMove={true}
+                    dragToResize={true}
+                    selectedDate={mySelectedDate}
+                    onSelectedDateChange={onSelectedDateChange}
+                    onEventClick={onEventClick}
+                    onEventCreated={onEventCreated}
+                    onEventDeleted={onEventDeleted}
+                    onEventUpdated={onEventUpdated}
+                />
+                <Popup
+                    display="bottom"
+                    fullScreen={true}
+                    contentPadding={false}
+                    headerText={headerText}
+                    anchor={anchor}
+                    buttons={popupButtons}
+                    isOpen={isOpen}
+                    onClose={onClose}
+                    responsive={responsivePopup}
+                >
+                    <div className="mbsc-form-group">
+                        <Input label="Title" value={popupEventTitle} onChange={titleChange} />
+                        <Textarea label="Description" value={popupEventDescription} onChange={descriptionChange} />
                     </div>
-                    <SegmentedGroup onChange={statusChange}>
-                        <SegmentedItem value="busy" checked={popupEventStatus === 'busy'}>Show as busy</SegmentedItem>
-                        <SegmentedItem value="free" checked={popupEventStatus === 'free'}>Show as free</SegmentedItem>
-                    </SegmentedGroup>
-                    {isEdit ? <div className="mbsc-button-group"><Button className="mbsc-button-block" color="danger" variant="outline" onClick={onDeleteClick}>Delete event</Button></div> : null}
-                </div>
-            </Popup>
-            <Popup
-                display="bottom"
-                contentPadding={false}
-                showArrow={false}
-                showOverlay={false}
-                anchor={colorAnchor}
-                isOpen={colorPickerOpen}
-                buttons={colorButtons}
-                responsive={colorPopup}
-                ref={colorPicker}
-            >
-                <div className="crud-color-row">
-                    {colors.map((color, index) => {
-                        if (index < 5) {
-                            return <div key={index} onClick={changeColor} className={"crud-color-c " + (tempColor === color ? 'selected' : '')} data-value={color}>
-                                <div className="crud-color mbsc-icon mbsc-font-icon mbsc-icon-material-check" style={{ background: color }}></div>
-                            </div>
-                        } else return null;
-                    })}
-                </div>
-                <div className="crud-color-row">
-                    {colors.map((color, index) => {
-                        if (index >= 5) {
-                            return <div key={index} onClick={changeColor} className={"crud-color-c " + (tempColor === color ? 'selected' : '')} data-value={color}>
-                                <div className="crud-color mbsc-icon mbsc-font-icon mbsc-icon-material-check" style={{ background: color }}></div>
-                            </div>
-                        } else return null;
-                    })}
-                </div>
-            </Popup>
+                    <div className="mbsc-form-group">
+                        <Switch label="All-day" checked={popupEventAllDay} onChange={allDayChange} />
+                        <Input ref={startRef} label="Starts" />
+                        <Input ref={endRef} label="Ends" />
+                        <Datepicker
+                            select="range"
+                            controls={controls}
+                            touchUi={true}
+                            startInput={start}
+                            endInput={end}
+                            showRangeLabels={false}
+                            responsive={respSetting}
+                            onChange={dateChange}
+                            value={popupEventDate}
+                        />
+                        <div onClick={openColorPicker} className="event-color-c">
+                            <div className="event-color-label">Color</div>
+                            <div className="event-color" style={{ background: selectedColor }}></div>
+                        </div>
+                        <SegmentedGroup onChange={statusChange}>
+                            <SegmentedItem value="busy" checked={popupEventStatus === 'busy'}>Show as busy</SegmentedItem>
+                            <SegmentedItem value="free" checked={popupEventStatus === 'free'}>Show as free</SegmentedItem>
+                        </SegmentedGroup>
+                        {isEdit ? <div className="mbsc-button-group"><Button className="mbsc-button-block" color="danger" variant="outline" onClick={onDeleteClick}>Delete event</Button></div> : null}
+                    </div>
+                </Popup>
+                <Popup
+                    display="bottom"
+                    contentPadding={false}
+                    showArrow={false}
+                    showOverlay={false}
+                    anchor={colorAnchor}
+                    isOpen={colorPickerOpen}
+                    buttons={colorButtons}
+                    responsive={colorPopup}
+                    ref={colorPicker}
+                >
+                    <div className="crud-color-row">
+                        {colors.map((color, index) => {
+                            if (index < 5) {
+                                return <div key={index} onClick={changeColor} className={"crud-color-c " + (tempColor === color ? 'selected' : '')} data-value={color}>
+                                    <div className="crud-color mbsc-icon mbsc-font-icon mbsc-icon-material-check" style={{ background: color }}></div>
+                                </div>
+                            } else return null;
+                        })}
+                    </div>
+                    <div className="crud-color-row">
+                        {colors.map((color, index) => {
+                            if (index >= 5) {
+                                return <div key={index} onClick={changeColor} className={"crud-color-c " + (tempColor === color ? 'selected' : '')} data-value={color}>
+                                    <div className="crud-color mbsc-icon mbsc-font-icon mbsc-icon-material-check" style={{ background: color }}></div>
+                                </div>
+                            } else return null;
+                        })}
+                    </div>
+                </Popup>
+            </>
+            )}
         </div>
         
         <Footer/>
