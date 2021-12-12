@@ -1,0 +1,126 @@
+
+.login {
+    background-image: url('/images/index.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.loginbox {
+    position: relative;
+}
+
+.logincont{
+    position: relative;
+    width: 400px;
+    min-height: 400px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.3); 
+    /* border: 1px solid rgba(255,255,255,0.5); */
+    box-shadow: 3px 3px 5px rgba(12, 15, 49, 0.37);
+
+}
+
+.registercont {
+    position: relative;
+    width: 400px;
+    min-height: 550px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.3); 
+    /* border: 1px solid rgba(255,255,255,0.5); */
+    box-shadow: 3px 3px 5px rgba(12, 15, 49, 0.081);
+
+}
+
+.inputs {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0px; 
+}
+.titlelogin{
+ position: relative;
+ color: #ffff;
+ font-size: 24px;
+ font-weight: 600;
+ letter-spacing: 1px;
+ margin-bottom: 40px;
+
+}
+
+.titlelogin::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background: #ffff;
+}
+
+.inputbox{
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+.column {
+    flex: 50%;
+}
+.form-controll{
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 35px;
+    /* border: 1px solid rgba(255, 255, 255, 0.231);*/
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.3); 
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #ffff;
+    opacity: .7;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.2);
+    box-shadow: 3px 3px 5px rgba(4, 9, 50, 0.068);
+}
+
+
+.form-controll::placeholder{
+    color: #ffff;
+}
+
+.form-controll[type="submit"] {
+    background: #ffff;
+    color: black;
+    max-width: 100px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.transfer{
+    margin-top: 5px;
+    color: #ffff;
+    font-weight: 400;
+}
+
+.trans{
+    color: #ffff;
+    font-weight: 600;
+}

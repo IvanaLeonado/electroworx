@@ -1,0 +1,242 @@
+
+
+
+/*COMPANY BACKGROUND*/
+
+.mv{
+  width: 100%;
+  height: 100%;
+  padding: 10em 10em;
+  background-image: url('/images/home.jpg');
+  background-repeat: no-repeat;
+  background-position: 100% 20%; 
+}
+.glass{
+  width: 50%;
+  height: 60%;
+  background-color: rgba(255,255,255,0.1);
+  padding: 50px;
+  color: white;
+  border-radius: 5px;
+  backdrop-filter: blur(20px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(45,55,68,0,0.3);
+  line-height: 1.5;
+}
+
+.glasser{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.glassest {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+
+
+/*MISSION VISION */
+.mission {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background:  rgb(218, 220, 224) 100%;
+}
+.neu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1100px;
+}
+.neu .nemo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 400px;
+  margin: 70px 20px;
+  position: relative;
+  padding: 30px 30px;
+  background: rgb(218, 220, 224) 100%;
+  border-radius: 40px;
+  box-shadow: -3px -3px 7px #ffffff73,
+              3px 3px 7px rgba(0,0,0,0.1);
+              /* inset -5px -5px 10px rgba(255,255,255,0.5),
+              inset 5px 5px 20px rgba(0,0,0,0.05); */
+}
+
+.nemo:after {
+  content: '';
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  background-color: transparent;
+  border-radius: 40px;
+  box-shadow: inset -3px -3px 7px #ffffff73,
+                inset 3px 3px 7px rgba(0,0,0,0.1);
+}
+
+.morph {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.ism{
+  color: rgb(27, 53, 74);
+  font-weight: 700;
+  font-size: 4em;
+  letter-spacing: 2px;
+}
+
+.missioner{
+  font-size: 1em;
+  color: rgb(27, 53, 74);
+}
+
+
+
+
+
+
+/*MEET THE TEAM CSS*/
+
+
+.team{
+  position:relative;
+  flex-wrap: wrap;
+ min-height: 100vh;
+ align-items: center;
+ justify-content: center;
+background-image: -webkit-linear-gradient(-80deg,rgb(69, 76, 83) 40%, rgb(156, 162, 169) 50%, rgba(198,204,216,1) 100%);
+ 
+
+}
+.team::before{
+  content: '';
+  position: absolute;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.team > h1 {
+  color: white ;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  padding: 10px 25%;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 0;
+ 
+}
+
+.container .card {
+position: relative;
+width: 300px;
+height: 400px;
+background: rgba(255,255,255,0.05);
+margin: 20px;
+overflow: hidden;
+box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+border-radius: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+backdrop-filter: blur(10px);
+
+}
+.container .card .content{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0.5;
+  transition: 0.5s;
+} 
+
+ .container .card:hover .content {
+ opacity: 1;
+ transform: translateY(-20px);
+}
+
+.container .card .content .imgBx {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid rgb(255, 255, 255);
+}
+.container .card .content .imgBx img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100;
+  object-fit: cover;
+}
+
+.container .card .content .contentBx h3 {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0 10px;
+  line-height: 1.1em;
+  
+}
+.container .card .content .contentBx h3 span{
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: initial;
+}
+
+.container .card .sci{
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+}
+
+.container .card .sci li{
+  list-style: none;
+  margin: 0 10px;
+  transform: translateY(40px);
+  transition: 0.5s;
+  opacity: 0;
+  transition-delay: calc(0.1s * var(--i));
+}
+
+.container .card:hover .sci li{
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.container .card .sci li a
+{
+  color:rgb(27, 53, 74);
+  font-size: 24px;
+  margin: 10px 10px;
+}
+ 
+

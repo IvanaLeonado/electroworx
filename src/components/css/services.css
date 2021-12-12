@@ -1,0 +1,349 @@
+
+
+/*SERVICES*/
+.services{
+    background-color: rgb(12, 51, 83);
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+.serv {
+    position: relative;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+    padding: 20px 20px;
+}
+
+.serv .serve
+{
+    position: relative;
+    height: 250px;
+    background: white;
+    display:flex;
+    width: 45%;
+    margin: 20px 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.serv .serve .imgbx 
+{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+    transition: 0.5s ease-in-out;
+}
+
+.serv .serve:hover .imgbx {
+    height: 150px;
+    width: 150px;
+    left: -75px;
+    top: calc(50% - 75px);
+}
+
+.serv .serve .imgbx .service{
+    max-width: 100px;
+    transition: 00.5s ease-in-out;
+}
+
+.serv .serve:hover .imgbx .service {
+    max-width: 75px;
+    max-height: 100vh;
+}
+
+.serv .serve .contserve {
+ position: absolute;
+ right: 0;
+ width: calc(100% - 75px);
+ height: 100%;
+ padding: 20px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.serv .serve .contserve .contserving .servcont {
+    color: rgb(12, 51, 83);
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.serv .serve .contserve .contserving .contservative {
+    color:  black;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+@media (max-width: 992px)
+{
+  .serv{
+      position: relative;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+  }
+  .serv .serve {
+      max-width: 300px;
+      height: auto;
+      flex-direction: column;
+      background: transparent;
+      margin: -20px 0;
+      box-shadow: none;
+  }
+  .serv .serve .imgbx {
+      position: relative;
+  }
+  .serv .serve .imgbx,
+  .serv .serve:hover .imgbx {
+      width: 80%;
+      height: 200px;
+      top: 100px;
+      left: 10%;
+  }  
+  .serv .serve:hover .imgbx {
+      top: 80px;
+  }
+  .serv .serve .imgbx .service,
+  .serv .serve:hover .imgbx .service{
+  max-width: 100px;
+}
+    
+    
+.serv .serve .contserve {
+    position: relative;
+      width: 100%;
+      background: white;
+      box-shadow: none;
+      border-radius: 20px;
+      padding: 20px 40px;
+      border-top: 100px solid white;
+  }
+
+
+} 
+
+
+.titler{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    color: white;
+    font-size: 80px;
+    height: 50%;
+    margin: 50px 0;
+    position: relative;
+    padding: 30px 30px;
+    background: rgb(12, 51, 83);
+    border-radius: 40px;
+    box-shadow: -3px -3px 7px rgba(40, 76, 105, 0.585),
+                3px 3px 7px rgba(0,0,0,0.1),
+                 inset -5px -5px 10px rgba(40, 76, 105, 0.585),
+                inset 5px 5px 20px rgba(0,0,0,0.05); 
+
+}
+
+/*PARTNERS*/
+
+.partners
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/partne.png');
+    height: 70vh;
+   
+}
+.partners .part
+{
+    position: relative;
+    max-width: 600px;
+    padding: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    overflow: hidden;
+    color: rgb(12, 51, 83);
+    padding: 25px;
+    margin: 100px auto;
+    max-width: 600px;
+}
+.partners .part .ner
+{
+    position: relative;
+    margin: 0 0 20px;
+    padding: 0;
+    font-size: 48px;
+    text-transform: uppercase;
+    z-index: 1;
+    text-align: center;
+}
+.partners .part:before
+{
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background-image: url('/images/partne.png');
+    background-attachment: fixed; 
+    filter: blur(10px);
+}
+.partners .part .partner
+{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    z-index: 2;
+}
+.science {
+    font-size: 15px;
+}
+
+
+
+
+/*TESTIMONIALS*/
+ .testimonials {
+    
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: rgb(218, 220, 224) 100%;;
+} 
+
+
+.testimonial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* background: rgba(135, 135, 135, 0.251); */
+}
+
+.testi {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.testi .teste{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testi .teste .contentest {
+   position: absolute;
+   bottom: -160px;
+   width: 100%;
+   height: 160px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 10;
+   flex-direction: column;
+   backdrop-filter: blur(15px);
+   box-shadow: 0 -10px 10 rgba(0,0,0,0.1);
+   border: 1px solid rgba(255,255,255,0.2); 
+   transition: bottom 0.5s;
+   transition-delay: 0.8s;
+}
+
+.testi .teste:hover .contentest{
+    bottom:0px;
+    transition-delay: 0s;
+    align-items: center;
+    justify-content: center;
+}
+
+.testi .teste .contentest .boxtest .contest
+{
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 22px;
+    text-align: center;
+    margin: 20px 0 15px;
+    line-height: 1.1em;
+    transition:  0.5s;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition-delay: 0.6s;
+}
+.testi .teste .contentest .boxtest .contest .tester{
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: initial;
+}
+
+.testi .teste:hover .contentest .boxtest .contest
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.testi .teste .contentest .science
+{
+    position: relative;
+    bottom: 10px;
+    display: flex;
+    margin: 0 10px;
+    transform: translateY(40px);
+    transition: 0.5s;
+    opacity: 0;
+    font-size: 18px;
+    color: white;
+    transition-delay: calc(0.2s * var(--i));
+}
+
+.testi .teste:hover .contentest .science
+{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.titlest{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(12, 51, 83);
+    font-size: 100px;
+    width: 45%;
+    position: relative;
+    padding: 20px 50%;
+    /* margin-bottom: -150px; */
+    letter-spacing: 2px;    
+
+    
+}
